@@ -1,2 +1,2 @@
 # .dotfiles
-contains various configuration files for various utilities and tools (e.g. nvim, tmux)
+contains various configuration files for a collection of different utilities and tools (e.g. nvim, tmux)
