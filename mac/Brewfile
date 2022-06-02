@@ -1,0 +1,190 @@
+# 'brew tap'
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+
+# Python
+brew "python@3.9"
+brew "python@3.10"
+brew "ipython"
+brew "pipenv"
+brew "jupyterlab"
+
+# Go
+brew "go"
+
+# Ruby
+brew "ruby"
+brew "rbenv"
+
+# Lua
+brew "lua"
+brew "luarocks"
+brew "luajit"
+brew "luajit-openresty"
+
+# Php
+brew "php"
+
+# Perl
+brew "perl"
+
+# Rust
+brew "rust"
+brew "rustup-init"
+
+# Version control
+brew "git"
+brew "gh"
+brew "git-flow"
+
+# Text Editors
+brew "vim"
+brew "nvim"
+
+# Shells and tools
+brew "bash"
+brew "zsh"
+brew "fish"
+brew "shellcheck"
+
+# Cross-shell prompt
+brew "starship"
+
+# Mac App Store
+brew "mas"
+
+# Fish Plugin Manager
+brew "fisher"
+
+# Node Tools
+brew "node"
+brew "nvm"
+brew "yarn"
+
+# Deno
+brew "deno"
+
+# CLI Helpers
+brew "bat"
+brew "fzf"
+brew "jq"
+brew "z"
+brew "tree"
+brew "exa"
+brew "ripgrep"
+brew "peco"
+brew "pv"
+brew "most"
+brew "fpp"
+brew "tokei"
+brew "tldr"
+
+# Command Line tools
+brew "tmux"
+brew "wget"
+brew "curl"
+
+# Parser tool
+brew "tree-sitter"
+
+# System Information/Monitoring
+brew "neofetch"
+brew "htop"
+
+# Terraform (Infrastructure as Code)
+brew "terraform"
+
+# 'brew install --cask' only if '/usr/libexec/java_home --failfast' fails
+cask "java" unless system "/usr/libexec/java_home --failfast"
+cask "oracle-jdk"
+
+# set arguments for all 'brew install --cask' commands
+cask_args appdir: "~/Applications", require_sha: true
+
+# 'brew install'
+brew "imagemagick"
+# 'brew install --with-rmtp', 'brew services restart' on version changes
+brew "denji/nginx/nginx-full", args: ["with-rmtp"], restart_service: :changed
+
+# 'brew install', always 'brew services restart', 'brew link', 'brew unlink mysql' (if it is installed)
+brew "mysql@5.6", restart_service: true, link: true, conflicts_with: ["mysql"]
+
+# 'brew install --cask'
+# 'greedy' always upgrade auto-updated or unversioned cask to latest version even if already installed
+
+# Apps
+cask "google-chrome", greedy: true
+cask "firefox"
+cask "slack"
+cask "spotify"
+cask "discord"
+
+# Spotlight replacement
+cask "alfred"
+
+# Design Tools
+cask "figma"
+# cask "adobe-creative-cloud"
+# cask "adobe-illustrator-cc"
+# cask "adobe-photoshop-cc"
+# cask "adobe-premiere-pro"
+# cask "adobe-xd"
+
+# REST/GraphQL GUI client
+cask "insomnia"
+
+# PDF Viewer
+cask "skim"
+
+# Window Manager
+cask "amethyst"
+cask "rectangle"
+
+# User notifications w/ Swift
+cask "yo"
+
+# Terminals
+cask "warp"
+cask "iterm2"
+cask "alacritty"
+
+# IDEs
+cask "visual-studio-code"
+
+# Containers / Orchestration
+cask "docker"
+cask "docker-compose"
+cask "kub"
+
+# Android development
+cask "android-sdk"
+cask "android-studio"
+cask "android-ndk"
+cask "java6"
+
+# Flutter development
+cask "flutter"
+
+# Python development
+cask "anaconda"
+
+# Julia
+cask "julia"
+
+# Fonts
+cask "font-fira-code"
+# cask "font-fira-mono"
+# cask "font-fira-sans"
+# cask "font-fira-sans-condensed"
+# cask "font-fira-sans-extra-condensed"
+# cask "font-fira-sans-mono"
+# cask "font-fira-sans-mono-for-powerline"
+
+# Google Cloud
+cask "google-cloud-sdk"
+
+# 'whalebrew install'
+whalebrew "whalebrew/wget"
+
