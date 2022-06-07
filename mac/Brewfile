@@ -96,6 +96,9 @@ brew "htop"
 # Terraform (Infrastructure as Code)
 brew "terraform"
 
+# PostgreSQL
+brew "postgres"
+
 # 'brew install --cask' only if '/usr/libexec/java_home --failfast' fails
 cask "java" unless system "/usr/libexec/java_home --failfast"
 cask "oracle-jdk"
@@ -181,6 +184,10 @@ cask "font-fira-code"
 # cask "font-fira-sans-extra-condensed"
 # cask "font-fira-sans-mono"
 # cask "font-fira-sans-mono-for-powerline"
+
+# Database Management Clients
+cask "beekeeper-studio"
+cask "pgadmin4"
 
 # Google Cloud
 cask "google-cloud-sdk"
